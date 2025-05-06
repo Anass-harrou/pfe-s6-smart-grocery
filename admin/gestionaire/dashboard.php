@@ -1,21 +1,12 @@
 <?php
-session_start();
-
-// Vérification si l'utilisateur est connecté et a le rôle de gestionnaire
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'gestionaire') {
-    // Non autorisé, redirection vers la page de connexion
-    header('Location: ../login.php');
-    exit();
-}
-
 require 'db.php';
 
-// --- Traitement du filtre de produits ---
+// Gestion des filtres
 $filtreNom = $_GET['nom'] ?? '';
 $filtreQuantite = $_GET['quantite'] ?? '';
 $filtreCategorie = $_GET['categorie'] ?? '';
-$filtreDisponible = $_GET['disponible'] ?? ''; // Get disponible filter
 
+// Requête SQL dynamique
 $sql = "SELECT * FROM produits WHERE 1=1";
 $params = [];
 
@@ -23,29 +14,28 @@ if (!empty($filtreNom)) {
     $sql .= " AND nom LIKE ?";
     $params[] = "%$filtreNom%";
 }
-
 if (!empty($filtreQuantite)) {
     $sql .= " AND quantite <= ?";
     $params[] = $filtreQuantite;
 }
-
 if (!empty($filtreCategorie)) {
     $sql .= " AND categorie = ?";
     $params[] = $filtreCategorie;
-}
-
-// Add disponible filter
-if ($filtreDisponible !== '') {
-    $sql .= " AND disponible = ?";
-    $params[] = $filtreDisponible;
 }
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $produits = $stmt->fetchAll();
 
-// --- Récupération du nombre de produits en stock critique ---
-$alerteStockCritique = $pdo->query("SELECT COUNT(*) FROM produits WHERE quantite <= 5")->fetchColumn();
+// Stats globales
+$totalProduits = $pdo->query("SELECT COUNT(*) FROM produits")->fetchColumn();
+$stockCritique = $pdo->query("SELECT COUNT(*) FROM produits WHERE quantite <= 5")->fetchColumn();
+
+// Obtenir l'heure et les minutes actuelles
+$heureMinute = date('H:i');
+
+// Chemin vers ton logo (à remplacer !)
+$logoPath = 'chemin/vers/ton/logo.png';
 ?>
 
 <!DOCTYPE html>
@@ -53,111 +43,244 @@ $alerteStockCritique = $pdo->query("SELECT COUNT(*) FROM produits WHERE quantite
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Gestionnaire</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            display: flex; /* Pour la mise en page globale avec la sidebar */
         }
+
         .sidebar {
-            height: 100vh;
-            background-color:rgb(121, 161, 219);
+            background-color:rgb(36, 105, 174);
             color: white;
             padding: 1rem;
+            width: 230px;
+            flex-shrink: 0; /* Empêche la sidebar de rétrécir */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            position: fixed; /* Pour rester visible lors du défilement */
         }
-        
+
         .sidebar a {
             color: white;
             text-decoration: none;
+            margin: 0.5rem 0;
+            font-weight: 500;
             display: block;
-            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
         }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .main-content {
+            margin-left: 230px; /* Pour laisser de l'espace à la sidebar */
+            padding: 2rem;
+            flex-grow: 1; /* Permet au contenu principal de s'étendre */
+        }
+
+        .top-bar {
+    background-color: #e9ecef;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between; /* Espacer les groupes d'éléments */
+    align-items: center;
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 500;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+}
+
+
+.top-bar-separator {
+    height: 1.5rem;
+    border-left: 1px solid #ced4da;
+    margin: 0 1rem;
+}
+
+.top-bar-icon {
+    margin-right: 0.5rem;
+    color: #007bff; /* Couleur primaire pour les icônes */
+}
+
         .card-stat {
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            text-align: center;
+            padding: 1.5rem;
         }
+
+        .card-stat h4 {
+            font-size: 2rem;
+            color:rgba(2, 9, 17, 0.77);
+        }
+
+        .card {
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border: 1px solid #dee2e6;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .form-control, .form-select {
+            border-radius: 0.375rem;
+            border: 1px solid #ced4da;
+            padding: 0.75rem;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 0.375rem;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color:rgb(20, 65, 118);
+            border-color:rgb(19, 70, 133);
+        }
+
+        .table {
+            background-color: #fff;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table th, .table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #dee2e6;
+            text-align: left;
+        }
+
+        .table thead th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+
         .table img {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             object-fit: cover;
+            border-radius: 0.25rem;
+        }
+
+        .table-danger td {
+            background-color: #ffe3e3;
+        }
+
+        /* Style pour le logo */
+        .logo {
+            max-height: 2.5rem; /* Ajuste la taille selon tes besoins */
+            margin-right: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="d-flex">
-        <div class="sidebar">
-            <h4> Panier Intelligent</h4>
-            <a href="#">Tableau de bord</a>
-            <a href="#"> Stock</a>
-            <a href="#">Ajouter produit</a>
-            <a href="#">Alertes</a>
-            <a href="logout.php">🔒 Déconnexion</a>
+
+<div class="d-flex">
+    <div class="sidebar">
+        <div>
+            <h4 class="mb-3">
+                <img src="<?= htmlspecialchars($logoPath) ?>" alt="Logo" class="logo">
+            </h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-home me-2"></i> Tableau de bord</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-box me-2"></i> Stock</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ajouterproduit.php"><i class="fas fa-plus me-2"></i> Ajouter produit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-bell me-2"></i> Alertes</a>
+                </li>
+            </ul>
         </div>
-<!-- zyada li zedta  -->
-        <div class="container-fluid p-4">
-            <nav class="navbar navbar-light bg-white shadow-sm mb-4">
-                <span class="navbar-brand mb-0 h1">Bienvenue, Gestionnaire</span>
-            </nav>
+        <div>
+            <hr class="bg-light">
+            <a class="nav-link" href="../logout.php"><i class="fas fa-lock me-2"></i> Déconnexion</a>
+        </div>
+    </div>
 
-            <div class="row mb-4">
-                <div class="col-md-3">
-                    <div class="card card-stat p-3 text-center">
-                        <h6>Total Produits</h6>
-                        <h4><?= count($produits) ?></h4> </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-stat p-3 text-center text-danger">
-                        <h6>Stock Critique</h6>
-                        <h4><?= $alerteStockCritique ?></h4>
-                    </div>
-                </div>
-                </div> 
-            <div class="card mb-4 p-4">
-                <h5>Ajouter un produit</h5>
-                <form action="ajouterproduit.php" method="POST" enctype="multipart/form-data" class="row g-3">
-                    <div class="col-md-4">
-                        <input type="text" name="nom" class="form-control" placeholder="Nom du produit" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="number" name="prix" step="0.01" class="form-control" placeholder="Prix" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="number" name="quantite" class="form-control" placeholder="Quantité" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="text" name="categorie" class="form-control" placeholder="Catégorie" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="text" name="uid" class="form-control" placeholder="UID codebar" required>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="file" name="image" class="form-control">
-                    </div>
-                    <div class="col-md-2">
-                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="disponible" name="disponible" value="1">
-                            <label class="form-check-label" for="disponible">Disponible</label>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary w-100">Ajouter</button>
-                    </div>
-                </form>
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <span class="me-2"><i class="fas fa-calendar-alt top-bar-icon"></i> <?= date('d/m/Y') ?></span>
+                <span class="top-bar-separator"></span>
+                <span><i class="far fa-clock top-bar-icon"></i> <?= $heureMinute ?></span>
             </div>
+            <div class="top-bar-right">
+                <i class="fas fa-chart-line top-bar-icon"></i>
+                <span class="top-bar-separator"></span>
+                <i class="fas fa-bell top-bar-icon"></i>
+            </div>
+        </div>
 
-            <div class="card mb-4 p-4">
-                <h5>Filtrer les produits</h5>
-                <form method="GET" class="row g-3 align-items-center">
-                    <div class="col-md-3">
-                        <input type="text" name="nom" class="form-control" placeholder="Filtrer par nom" value="<?= htmlspecialchars($filtreNom) ?>">
+        <nav class="navbar bg-light shadow-sm mb-4 rounded">
+            <h5 class="mb-0"><i class="fas fa-handshake me-2"></i> Bienvenue, Gestionnaire</h5>
+        </nav>
+
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card-stat">
+                    <small class="text-muted">Total Produits</small>
+                    <h4><?= $totalProduits ?></h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-stat bg-danger text-white">
+                    <small>Stock Critique</small>
+                    <h4><?= $stockCritique ?></h4>
+                </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-search me-2"></i> Filtrer les produits</h5>
+                <form method="GET" class="row g-3 mt-2">
+                    <div class="col-md-4">
+                        <input type="text" name="nom" class="form-control" placeholder="Nom du produit" value="<?= htmlspecialchars($filtreNom) ?>">
                     </div>
-                    <div class="col-md-2">
-                        <input type="number" name="quantite" class="form-control" placeholder="Quantité max" value="<?= htmlspecialchars($filtreQuantite) ?>">
+                    <div class="col-md-3">
+                        <input type="number" name="quantite" class="form-control" placeholder="Quantité maximal" value="<?= htmlspecialchars($filtreQuantite) ?>">
                     </div>
                     <div class="col-md-3">
                         <select name="categorie" class="form-select">
@@ -167,23 +290,17 @@ $alerteStockCritique = $pdo->query("SELECT COUNT(*) FROM produits WHERE quantite
                             <option value="hygiène" <?= $filtreCategorie == 'hygiène' ? 'selected' : '' ?>>Hygiène</option>
                         </select>
                     </div>
-                    <!-- Add disponible filter -->
-                    <div class="col-md-3">
-                        <select name="disponible" class="form-select">
-                            <option value="">Toute disponibilité</option>
-                            <option value="1" <?= $filtreDisponible === '1' ? 'selected' : '' ?>>Disponible</option>
-                            <option value="0" <?= $filtreDisponible === '0' ? 'selected' : '' ?>>Indisponible</option>
-                        </select>
-                    </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-outline-secondary">Filtrer</button>
+                        <button type="submit" class="btn btn-primary w-100">Filtrer</button>
                     </div>
                 </form>
             </div>
+        </div>
 
-            <div class="card p-4">
-                <h5>Produits en stock</h5>
-                <table class="table table-hover mt-3 table-bordered table-striped">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-box me-2"></i> Liste des Produits</h5>
+                <table class="table table-hover mt-3">
                     <thead class="table-light">
                         <tr>
                             <th>Image</th>
@@ -192,39 +309,26 @@ $alerteStockCritique = $pdo->query("SELECT COUNT(*) FROM produits WHERE quantite
                             <th>Quantité</th>
                             <th>Catégorie</th>
                             <th>UID</th>
-                            <th>Disponibilité</th> <!-- Add disponible column -->
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($produits as $produit): ?>
                             <tr class="<?= $produit['quantite'] <= 5 ? 'table-danger' : '' ?>">
-                                <td><img src="<?= htmlspecialchars($produit['image']) ?>" alt="image produit"></td>
+                                <td><img src="<?= htmlspecialchars($produit['image']) ?>" alt="image produit" class="img-thumbnail"></td>
                                 <td><?= htmlspecialchars($produit['nom']) ?></td>
-                                <td><?= number_format($produit['prix'], 2) ?> DH</td>
+                                <td><?= htmlspecialchars(number_format($produit['prix'], 2)) ?> DH</td>
                                 <td><?= htmlspecialchars($produit['quantite']) ?></td>
                                 <td><?= htmlspecialchars($produit['categorie']) ?></td>
                                 <td><?= htmlspecialchars($produit['uid_codebar']) ?></td>
-                                <td><?= htmlspecialchars($produit['disponible']) ?></td> <!-- Display 0 or 1 -->
-                                <?php echo "<td>";
-
-                                            echo '<a href="update.php?id='. $produit['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                            echo '<a href="delete.php?id='. $produit['id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
-                                echo "</td>";
-                                ?>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
-
-            <?php if ($alerteStockCritique > 0): ?>
-                <div class="alert alert-danger mt-3" role="alert">
-                    ⚠️ Attention : <?= $alerteStockCritique ?> produit(s) en stock critique !
-                </div>
-            <?php endif; ?>
         </div>
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+
 </body>
 </html>
