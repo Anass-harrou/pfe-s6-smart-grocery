@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'stock_db';
+$dbname = 'gestion_stock';
 $user = 'root';
 $pass = ''; // ou le mot de passe de ton serveur local
 
