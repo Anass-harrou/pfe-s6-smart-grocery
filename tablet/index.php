@@ -575,7 +575,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
                             </div>
                             <div class="cart-item-quantity">
                                 <label for="quantity_<?php echo $product_id; ?>">Quantité :</label>
-                                <input type="number" id="quantity_<?php echo $product_id; ?>" name="quantity[<?php echo $product_id; ?>]" value="<?php echo htmlspecialchars($item['quantity']); ?>" min="0">
+                             <input type="number" id="quantity_<?php echo $product_id; ?>" name="quantity[<?php echo $product_id; ?>]" value="<?php echo htmlspecialchars($item['quantity']); ?>" min="0">
                             </div>
                         </div>
                     <?php endforeach; ?>
