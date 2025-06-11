@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+require_once 'db.php';
 
 // Obtenir l'heure et les minutes actuelles
 $heureMinute = date('H:i');
@@ -12,11 +12,25 @@ $logoPath = '../logo2.svg';
 $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchColumn();
 $totalProduits = $pdo->query("SELECT COUNT(*) FROM produits")->fetchColumn();
 $stockCritique = $pdo->query("SELECT COUNT(*) FROM produits WHERE quantite <= 5")->fetchColumn();
-// Calcul du stock total (nombre total d'unités en stock)
 $stockTotalQuantite = $pdo->query("SELECT SUM(quantite) FROM produits")->fetchColumn();
+ $msg = $pdo->query("SELECT * FROM messages_admin ORDER BY date_publication DESC LIMIT 1")->fetch();
 
-// Calcul de la valeur totale du stock (quantité * prix)
-$valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchColumn();
+
+$dateToday = date('Y-m-d');
+$sql = "SELECT COUNT(*) AS SIZE FROM messages_admin WHERE DATE(date_publication) = :dateToday";
+$stmt = $pdo->prepare($sql); // hayda ? brask hhh chof wach khadama baz
+$stmt->execute([':dateToday' => $dateToday]);
+$messagesCount = $stmt->fetchColumn(); // ehya nada
+echo $messagesCount;
+
+// جلب الرسائل ديال اليوم
+$sqlMessages = "SELECT * FROM messages_admin WHERE DATE(date_publication) = ? ORDER BY date_publication DESC";
+$stmtMessages = $pdo->prepare($sqlMessages);
+$stmtMessages->execute([$dateToday]);
+$messagesToday = $stmtMessages->fetchAll();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,26 +47,25 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
             background-color: #f8f9fa;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
-            display: flex; /* Pour la mise en page globale avec la sidebar */
-            min-height: 100vh; /* Assure que le body prend au moins la hauteur de l'écran */
+            display: flex;
+            min-height: 100vh;
         }
 
-        /* Sidebar Styles */
         .sidebar {
-            background-color:rgb(86, 117, 148); /* Couleur plus sombre pour la sidebar */
+            background-color: rgb(86, 117, 148);
             color: white;
             padding: 1rem;
-            width: 250px; /* Légèrement plus large pour un meilleur confort */
-            flex-shrink: 0; /* Empêche la sidebar de rétrécir */
+            width: 250px;
+            flex-shrink: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 100vh;
-            position: fixed; /* Pour rester visible lors du défilement */
-            top: 0; /* Alignement en haut */
-            left: 0; /* Alignement à gauche */
-            z-index: 1010; /* Au-dessus du contenu principal */
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour la séparation */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1010;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar-brand {
@@ -64,9 +77,8 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
         }
 
         .sidebar-brand img {
-            max-height: 3rem; /* Taille du logo */
+            max-height: 3rem;
             margin-right: 0.75rem;
-          
         }
 
         .sidebar-brand span {
@@ -75,7 +87,7 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
         }
 
         .sidebar-nav {
-            flex-grow: 1; /* Prend l'espace restant */
+            flex-grow: 1;
             padding-top: 1rem;
         }
 
@@ -107,16 +119,14 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Main Content Styles */
         .main-content {
-            margin-left: 250px; /* Correspond à la largeur de la sidebar */
+            margin-left: 250px;
             padding: 2rem;
             flex-grow: 1;
             display: flex;
-            flex-direction: column; /* Pour organiser les éléments verticalement */
+            flex-direction: column;
         }
 
-        /* Top Bar Styles */
         .top-bar {
             background-color: #fff;
             padding: 1rem 2rem;
@@ -128,7 +138,7 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
             font-size: 1rem;
             color: #333;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
-            position: sticky; /* Reste en haut lors du défilement du contenu principal */
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
@@ -146,14 +156,13 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
 
         .top-bar-icon {
             margin-right: 0.5rem;
-            color: #007bff; /* Couleur primaire */
+            color: #007bff;
         }
 
         .top-bar-right .fw-bold {
             font-weight: 500 !important;
         }
 
-        /* Dashboard Cards Styles */
         .dashboard-cards {
             display: flex;
             flex-wrap: wrap;
@@ -166,13 +175,13 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
             border-radius: 0.35rem;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
             border: none;
-            flex: 1 0 calc(50% - 0.75rem); /* Deux cartes par ligne sur les écrans moyens et grands */
+            flex: 1 0 calc(50% - 0.75rem);
             max-width: calc(50% - 0.75rem);
         }
 
         @media (max-width: 767.98px) {
             .card {
-                flex: 0 0 100%; /* Une carte par ligne sur les petits écrans */
+                flex: 0 0 100%;
                 max-width: 100%;
             }
         }
@@ -186,7 +195,7 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
 
         .card-title {
             font-size: 1rem;
-            color: #4e73df; /* Couleur primaire pour les titres */
+            color: #4e73df;
             margin-bottom: 0.5rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -195,12 +204,12 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
         .card-value {
             font-size: 1.75rem;
             font-weight: bold;
-            color:rgb(129, 144, 201);
+            color: rgb(129, 144, 201);
         }
 
         .card-icon {
             font-size: 2.5rem;
-            color: #dddfeb; /* Couleur grise claire pour les icônes */
+            color: #dddfeb;
         }
 
         .bg-primary-card {
@@ -211,10 +220,9 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
             border-left: 0.25rem solid #1cc88a !important;
         }
 
-        /* Conseil Box Styles */
         .conseil-box {
             background-color: #f8f9fa;
-            border-left: 0.25rem solid #f6c23e !important; /* Couleur d'avertissement */
+            border-left: 0.25rem solid #f6c23e !important;
             color: #85640a;
             padding: 1rem 1.5rem;
             margin-bottom: 1.5rem;
@@ -229,91 +237,207 @@ $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchCo
             font-size: 1.2rem;
             color: #f6c23e;
         }
+        .annonce-admin {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffeeba;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
     </style>
 </head>
 
 <body>
 
-    <div class="d-flex">
-        <div class="sidebar">
-            <div class="sidebar-brand">
-                <img src="<?= htmlspecialchars($logoPath) ?>" alt="../logo2.svg" class="me-2">
-                
+<div class="d-flex">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <img src="<?= htmlspecialchars($logoPath) ?>" alt="Logo">
+        </div>
+        <!-- hi -->
+         <ul class="navbar-nav ms-auto">
+  <li class="nav-item dropdown">
+    <a class="nav-link position-relative" href="../mess_admin.php" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fas fa-bell"></i>
+      <?php if ($messagesCount > 0): ?>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          <?= $messagesCount ?>
+          <span class="visually-hidden">messages non lus</span>
+        </span>
+      <?php endif; ?>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="messagesDropdown" style="min-width: 300px;">
+      <?php if ($messagesCount == 0): ?>
+        <li><span class="dropdown-item-text">Pas de messages aujourd'hui.</span></li>
+      <?php else: ?>
+        <?php foreach ($messagesToday as $msg): ?>
+          <li>
+            <div class="dropdown-item">
+              <small class="text-muted"><?= date('H:i', strtotime($msg['date_publication'])) ?></small><br>
+              <?= htmlspecialchars($msg['contenu']) ?>
             </div>
-            <hr class="bg-light">
-            <div class="sidebar-nav">
-                <div class="nav-item">
-                    <a class="nav-link" href="stock.php">
-                        <i class="fas fa-box me-2"></i>
-                        Stock
-                    </a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link" href="ajouterproduit.php">
-                        <i class="fas fa-plus me-2"></i>
-                        Ajouter produit
-                    </a>
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-bell me-2"></i>
-                        Alertes
-                    </a>
-                </div>
-            </div>
-            <div class="sidebar-footer">
-                <hr class="bg-light">
-                <a class="nav-link" href="../logout.php">
-                    <i class="fas fa-sign-out-alt me-2"></i>
-                    Déconnexion
+          </li>
+          <li><hr class="dropdown-divider"></li>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </ul>
+  </li>
+</ul>
+<!-- hna -->
+        <hr class="bg-light">
+        <div class="sidebar-nav">
+            <div class="nav-item">
+                <a class="nav-link" href="stock.php">
+                    <i class="fas fa-box me-2"></i>
+                    Stock
                 </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="ajouterproduit.php">
+                    <i class="fas fa-plus me-2"></i>
+                    Ajouter produit
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="rapport.php">
+                    <i class="fas fa-file-alt me-2"></i>
+                    Rapport
+                </a>
+               
+
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="reception.php">
+                    <i class="fas fa-bell me-2"></i>
+                    Réception
+                </a>
+            </div>
+             
+        </div>
+        <div class="sidebar-footer">
+            <hr class="bg-light">
+            <a class="nav-link" href="../logout.php">
+                <i class="fas fa-sign-out-alt me-2"></i>
+                Déconnexion
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <span class="me-3"><i class="fas fa-calendar-alt top-bar-icon"></i> <?= date('d/m/Y') ?></span>
+                <span class="top-bar-separator"></span>
+                <span class="me-3"><i class="far fa-clock top-bar-icon"></i> <?= $heureMinute ?></span>
+            </div>
+            <div class="top-bar-right d-flex align-items-center">
+                <span class="fw-bold text-dark"><i class="fas fa-user me-2 text-primary"></i>Bienvenue, Gestionnaire</span>
             </div>
         </div>
 
-        <div class="main-content">
-            <div class="top-bar">
-                <div class="top-bar-left">
-                    <span class="me-3"><i class="fas fa-calendar-alt top-bar-icon"></i> <?= date('d/m/Y') ?></span>
-                    <span class="top-bar-separator"></span>
-                    <span class="me-3"><i class="far fa-clock top-bar-icon"></i> <?= $heureMinute ?></span>
-                </div>
-                <div class="top-bar-right d-flex align-items-center">
-                    <span class="fw-bold text-dark"><i class="fas fa-user me-2 text-primary"></i>Bienvenue, Gestionnaire</span>
-                </div>
-            </div>
+        <div class="conseil-box">
+            <i class="fas fa-lightbulb me-2"></i>
+            Conseil ! : Pensez à vérifier les produits proches de la rupture de stock avant midi.
+        </div>
 
-            <div class="conseil-box">
-                <i class="fas fa-lightbulb me-2"></i>
-                Conseil ! : Pensez à vérifier les produits proches de la rupture de stock avant midi.
-            </div>
-
-            <div class="dashboard-cards">
-                <div class="card bg-primary-card">
-                    <div class="card-body">
-                        <div class="me-3">
-                            <div class="card-title">Stock total</div>
-                            <div class="card-value"><?= htmlspecialchars($totalProduits ?? 0) ?></div>
-                        </div>
-                        <i class="fas fa-boxes card-icon"></i>
+        <div class="dashboard-cards">
+            <div class="card bg-primary-card">
+                <div class="card-body">
+                    <div class="me-3">
+                        <div class="card-title">Stock total</div>
+                        <div class="card-value"><?= htmlspecialchars($totalProduits ?? 0) ?></div>
                     </div>
+                    <i class="fas fa-boxes card-icon"></i>
                 </div>
+            </div>
 
-                <div class="card bg-success-card">
-                    <div class="card-body">
-                        <div class="me-3">
-                            <div class="card-title">Valeur du stock</div>
-                            <div class="card-value"><?= htmlspecialchars(number_format($valeurStock ?? 0, 2, ',', ' ') . ' dhs') ?></div>
-                        </div>
-                        <i class="fas fa-sack-dollar card-icon"></i>
+            <div class="card bg-success-card">
+                <div class="card-body">
+                    <div class="me-3">
+                        <div class="card-title">Valeur du stock</div>
+                        <div class="card-value"><?= htmlspecialchars(number_format($valeurStock ?? 0, 2, ',', ' ') . ' dhs') ?></div>
                     </div>
+                    <i class="fas fa-sack-dollar card-icon"></i>
                 </div>
             </div>
-
-            </div>
+          <!-- zyada li hna -->
+          <div class="stats-section" style="margin-top: 2rem;">
+    <div class="card" style="max-width: 600px; margin: auto;">
+        <div class="card-body">
+            <h5 class="card-title">Quantité moyenne en stock par produit</h5>
+            <p id="quantite-moyenne" style="font-size: 1.5rem; color: #4e73df;">Chargement...</p>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <div class="card" style="max-width: 600px; margin: 2rem auto;">
+    <div class="card-body" style="display: block; text-align: center;">
+        <h5 class="card-title" style="margin-bottom: 1rem;">Top 5 produits les plus disponibles en stock </h5>
+        <canvas id="top5Chart" width="600" height="400"></canvas>
+    </div>
+    </div>
+
+</div>
+
+<!-- saaafi -->
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+fetch('get_stats.php')
+.then(response => response.json())
+.then(data => {
+    // Afficher la quantité moyenne
+    document.getElementById('quantite-moyenne').textContent = parseFloat(data.quantite_moyenne).toFixed(2);
+
+    // Préparer les données pour le graphique
+    const labels = data.top5.map(item => item.nom);
+    const quantites = data.top5.map(item => item.quantite);
+
+    const ctx = document.getElementById('top5Chart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Quantité en stock',
+                data: quantites,
+                backgroundColor: 'rgba(78, 115, 223, 0.7)',
+                borderColor: 'rgba(78, 115, 223, 1)',
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+})
+.catch(err => {
+    console.error('Erreur en récupérant les stats:', err);
+    document.getElementById('quantite-moyenne').textContent = 'Erreur lors du chargement';
+});
+</script>
+
+
+
 
 </body>
-
 </html>

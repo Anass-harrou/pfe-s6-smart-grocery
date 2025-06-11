@@ -149,7 +149,8 @@ $heureMinute = date('H:i');
 </head>
 
 <body>
-    
+    <button class="btn btn-secondary" onclick="history.back()">⟵ RETOUR</button>
+
     
     <div class="main-content">
         <div class="top-bar">

@@ -64,7 +64,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                     </div>
                     <?php
                     // Include config file
-                    require_once "../config.php";
+                    require_once "config.php";
 
                     // Attempt select query execution
                     $sql = "SELECT * FROM client";
@@ -115,5 +115,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             </div>
         </div>
     </div>
+    <a href="mess_admin.php" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+    ✍️ Publier une annonce
+</a>
+
 </body>
 </html>
