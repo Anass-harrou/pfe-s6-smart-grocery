@@ -1,6 +1,10 @@
 <?php
 session_start();
+<<<<<<< HEAD
 require_once 'db.php';
+=======
+require 'db.php';
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
 
 // Obtenir l'heure et les minutes actuelles
 $heureMinute = date('H:i');
@@ -12,6 +16,7 @@ $logoPath = '../logo2.svg';
 $valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchColumn();
 $totalProduits = $pdo->query("SELECT COUNT(*) FROM produits")->fetchColumn();
 $stockCritique = $pdo->query("SELECT COUNT(*) FROM produits WHERE quantite <= 5")->fetchColumn();
+<<<<<<< HEAD
 $stockTotalQuantite = $pdo->query("SELECT SUM(quantite) FROM produits")->fetchColumn();
  $msg = $pdo->query("SELECT * FROM messages_admin ORDER BY date_publication DESC LIMIT 1")->fetch();
 
@@ -31,6 +36,13 @@ $messagesToday = $stmtMessages->fetchAll();
 
 
 
+=======
+// Calcul du stock total (nombre total d'unités en stock)
+$stockTotalQuantite = $pdo->query("SELECT SUM(quantite) FROM produits")->fetchColumn();
+
+// Calcul de la valeur totale du stock (quantité * prix)
+$valeurStock = $pdo->query("SELECT SUM(quantite * prix) FROM produits")->fetchColumn();
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +59,7 @@ $messagesToday = $stmtMessages->fetchAll();
             background-color: #f8f9fa;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
+<<<<<<< HEAD
             display: flex;
             min-height: 100vh;
         }
@@ -57,15 +70,36 @@ $messagesToday = $stmtMessages->fetchAll();
             padding: 1rem;
             width: 250px;
             flex-shrink: 0;
+=======
+            display: flex; /* Pour la mise en page globale avec la sidebar */
+            min-height: 100vh; /* Assure que le body prend au moins la hauteur de l'écran */
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color:rgb(86, 117, 148); /* Couleur plus sombre pour la sidebar */
+            color: white;
+            padding: 1rem;
+            width: 250px; /* Légèrement plus large pour un meilleur confort */
+            flex-shrink: 0; /* Empêche la sidebar de rétrécir */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 100vh;
+<<<<<<< HEAD
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1010;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+=======
+            position: fixed; /* Pour rester visible lors du défilement */
+            top: 0; /* Alignement en haut */
+            left: 0; /* Alignement à gauche */
+            z-index: 1010; /* Au-dessus du contenu principal */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour la séparation */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         }
 
         .sidebar-brand {
@@ -77,8 +111,14 @@ $messagesToday = $stmtMessages->fetchAll();
         }
 
         .sidebar-brand img {
+<<<<<<< HEAD
             max-height: 3rem;
             margin-right: 0.75rem;
+=======
+            max-height: 3rem; /* Taille du logo */
+            margin-right: 0.75rem;
+          
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         }
 
         .sidebar-brand span {
@@ -87,7 +127,11 @@ $messagesToday = $stmtMessages->fetchAll();
         }
 
         .sidebar-nav {
+<<<<<<< HEAD
             flex-grow: 1;
+=======
+            flex-grow: 1; /* Prend l'espace restant */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
             padding-top: 1rem;
         }
 
@@ -119,6 +163,7 @@ $messagesToday = $stmtMessages->fetchAll();
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+<<<<<<< HEAD
         .main-content {
             margin-left: 250px;
             padding: 2rem;
@@ -127,6 +172,18 @@ $messagesToday = $stmtMessages->fetchAll();
             flex-direction: column;
         }
 
+=======
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 250px; /* Correspond à la largeur de la sidebar */
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column; /* Pour organiser les éléments verticalement */
+        }
+
+        /* Top Bar Styles */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         .top-bar {
             background-color: #fff;
             padding: 1rem 2rem;
@@ -138,7 +195,11 @@ $messagesToday = $stmtMessages->fetchAll();
             font-size: 1rem;
             color: #333;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+<<<<<<< HEAD
             position: sticky;
+=======
+            position: sticky; /* Reste en haut lors du défilement du contenu principal */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
             top: 0;
             z-index: 1000;
         }
@@ -156,13 +217,21 @@ $messagesToday = $stmtMessages->fetchAll();
 
         .top-bar-icon {
             margin-right: 0.5rem;
+<<<<<<< HEAD
             color: #007bff;
+=======
+            color: #007bff; /* Couleur primaire */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         }
 
         .top-bar-right .fw-bold {
             font-weight: 500 !important;
         }
 
+<<<<<<< HEAD
+=======
+        /* Dashboard Cards Styles */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         .dashboard-cards {
             display: flex;
             flex-wrap: wrap;
@@ -175,13 +244,21 @@ $messagesToday = $stmtMessages->fetchAll();
             border-radius: 0.35rem;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
             border: none;
+<<<<<<< HEAD
             flex: 1 0 calc(50% - 0.75rem);
+=======
+            flex: 1 0 calc(50% - 0.75rem); /* Deux cartes par ligne sur les écrans moyens et grands */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
             max-width: calc(50% - 0.75rem);
         }
 
         @media (max-width: 767.98px) {
             .card {
+<<<<<<< HEAD
                 flex: 0 0 100%;
+=======
+                flex: 0 0 100%; /* Une carte par ligne sur les petits écrans */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
                 max-width: 100%;
             }
         }
@@ -195,7 +272,11 @@ $messagesToday = $stmtMessages->fetchAll();
 
         .card-title {
             font-size: 1rem;
+<<<<<<< HEAD
             color: #4e73df;
+=======
+            color: #4e73df; /* Couleur primaire pour les titres */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
             margin-bottom: 0.5rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -204,12 +285,20 @@ $messagesToday = $stmtMessages->fetchAll();
         .card-value {
             font-size: 1.75rem;
             font-weight: bold;
+<<<<<<< HEAD
             color: rgb(129, 144, 201);
+=======
+            color:rgb(129, 144, 201);
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         }
 
         .card-icon {
             font-size: 2.5rem;
+<<<<<<< HEAD
             color: #dddfeb;
+=======
+            color: #dddfeb; /* Couleur grise claire pour les icônes */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         }
 
         .bg-primary-card {
@@ -220,9 +309,16 @@ $messagesToday = $stmtMessages->fetchAll();
             border-left: 0.25rem solid #1cc88a !important;
         }
 
+<<<<<<< HEAD
         .conseil-box {
             background-color: #f8f9fa;
             border-left: 0.25rem solid #f6c23e !important;
+=======
+        /* Conseil Box Styles */
+        .conseil-box {
+            background-color: #f8f9fa;
+            border-left: 0.25rem solid #f6c23e !important; /* Couleur d'avertissement */
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
             color: #85640a;
             padding: 1rem 1.5rem;
             margin-bottom: 1.5rem;
@@ -237,6 +333,7 @@ $messagesToday = $stmtMessages->fetchAll();
             font-size: 1.2rem;
             color: #f6c23e;
         }
+<<<<<<< HEAD
         .annonce-admin {
     background-color: #fff3cd;
     border-left: 5px solid #ffeeba;
@@ -246,11 +343,14 @@ $messagesToday = $stmtMessages->fetchAll();
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+=======
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
     </style>
 </head>
 
 <body>
 
+<<<<<<< HEAD
 <div class="d-flex">
     <div class="sidebar">
         <div class="sidebar-brand">
@@ -441,3 +541,88 @@ fetch('get_stats.php')
 
 </body>
 </html>
+=======
+    <div class="d-flex">
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <img src="<?= htmlspecialchars($logoPath) ?>" alt="../logo2.svg" class="me-2">
+                
+            </div>
+            <hr class="bg-light">
+            <div class="sidebar-nav">
+                <div class="nav-item">
+                    <a class="nav-link" href="stock.php">
+                        <i class="fas fa-box me-2"></i>
+                        Stock
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="ajouterproduit.php">
+                        <i class="fas fa-plus me-2"></i>
+                        Ajouter produit
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell me-2"></i>
+                        Alertes
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <hr class="bg-light">
+                <a class="nav-link" href="../logout.php">
+                    <i class="fas fa-sign-out-alt me-2"></i>
+                    Déconnexion
+                </a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <span class="me-3"><i class="fas fa-calendar-alt top-bar-icon"></i> <?= date('d/m/Y') ?></span>
+                    <span class="top-bar-separator"></span>
+                    <span class="me-3"><i class="far fa-clock top-bar-icon"></i> <?= $heureMinute ?></span>
+                </div>
+                <div class="top-bar-right d-flex align-items-center">
+                    <span class="fw-bold text-dark"><i class="fas fa-user me-2 text-primary"></i>Bienvenue, Gestionnaire</span>
+                </div>
+            </div>
+
+            <div class="conseil-box">
+                <i class="fas fa-lightbulb me-2"></i>
+                Conseil ! : Pensez à vérifier les produits proches de la rupture de stock avant midi.
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="card bg-primary-card">
+                    <div class="card-body">
+                        <div class="me-3">
+                            <div class="card-title">Stock total</div>
+                            <div class="card-value"><?= htmlspecialchars($totalProduits ?? 0) ?></div>
+                        </div>
+                        <i class="fas fa-boxes card-icon"></i>
+                    </div>
+                </div>
+
+                <div class="card bg-success-card">
+                    <div class="card-body">
+                        <div class="me-3">
+                            <div class="card-title">Valeur du stock</div>
+                            <div class="card-value"><?= htmlspecialchars(number_format($valeurStock ?? 0, 2, ',', ' ') . ' dhs') ?></div>
+                        </div>
+                        <i class="fas fa-sack-dollar card-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25

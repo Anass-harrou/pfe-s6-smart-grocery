@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 (<?php
+=======
+<?php
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
 session_start();
 
 define('DB_SERVER', 'localhost');
@@ -13,6 +17,10 @@ if ($conn->connect_error) {
 }
 
 $login_error = "";
+<<<<<<< HEAD
+=======
+$showLoginForm = false;
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
 $isLoggedIn = isset($_SESSION['user_id']);
 
 function sanitizeInput($conn, $data) {
@@ -248,6 +256,13 @@ if (isset($_GET['update_cart_display'])) {
     exit;
 }
 
+<<<<<<< HEAD
+=======
+if (isset($_SESSION['added_products'])) {
+    unset($_SESSION['added_products']);
+}
+
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_cart'])) {
     foreach ($_POST['quantity'] as $product_id => $quantity) {
         $product_id = sanitizeInput($conn, $product_id);
@@ -570,7 +585,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
                             </div>
                             <div class="cart-item-quantity">
                                 <label for="quantity_<?php echo $product_id; ?>">Quantité :</label>
+<<<<<<< HEAD
                                 <input type="number" id="quantity_<?php echo $product_id; ?>" name="quantity[<?php echo $product_id; ?>]" value="<?php echo htmlspecialchars($item['quantity']); ?>" min="0">
+=======
+                             <input type="number" id="quantity_<?php echo $product_id; ?>" name="quantity[<?php echo $product_id; ?>]" value="<?php echo htmlspecialchars($item['quantity']); ?>" min="0">
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -669,6 +688,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
                 dataType: 'json',
                 success: function(response) {
                     $('#cart-content').html(response.cart_html);
+<<<<<<< HEAD
+=======
+                    
+                    if (response.notification && response.notification_type) {
+                        toastr[response.notification_type](response.notification);
+                    }
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
                 },
                 error: function(xhr, status, error) {
                     console.error("AJAX error:", error);
@@ -677,12 +703,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
             });
         }
 
+<<<<<<< HEAD
+=======
+        function checkJsonAndAddToCart() {
+            $.ajax({
+                url: 'index.php',
+                type: 'POST',
+                data: {action: 'update_cart'},
+                success: function() {
+                    updateCartDisplay();
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX error:", error);
+                    toastr.error('Erreur lors de la mise à jour du panier');
+                }
+            });
+        }
+
+        checkJsonAndAddToCart();
+        setInterval(checkJsonAndAddToCart, 2000);
+
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
         $(document).on('click', '.add-to-cart-btn', function() {
             var productId = $(this).data('product-id');
             $.post('index.php', {
                 product_id: productId,
                 action: 'add',
                 quantity: 1
+<<<<<<< HEAD
             }, function(response) {
                 if (response && response.status === 'success') {
                     toastr.success(response.message);
@@ -694,6 +742,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
             .fail(function(xhr, status, error) {
                 console.error("AJAX error:", error);
                 toastr.error('Erreur lors de l\'ajout au panier');
+=======
+            }, function() {
+                updateCartDisplay();
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
             });
         });
     });
@@ -702,4 +754,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
 </html>
 <?php
 $conn->close();
+<<<<<<< HEAD
 ?>)
+=======
+?>
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
