@@ -58,6 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+<<<<<<< HEAD
+    
+<button class="btn btn-secondary" onclick="history.back()">⟵RETOUR</button>
+=======
+>>>>>>> f18da9fe6e62a209298bc5b9edda769309b7ca25
 
 <div class="container">
     <div class="card p-4">
