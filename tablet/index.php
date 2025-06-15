@@ -1,4 +1,4 @@
-<?php
+(<?php
 session_start();
 
 define('DB_SERVER', 'localhost');
@@ -13,7 +13,6 @@ if ($conn->connect_error) {
 }
 
 $login_error = "";
-$showLoginForm = false;
 $isLoggedIn = isset($_SESSION['user_id']);
 
 function sanitizeInput($conn, $data) {
@@ -247,10 +246,6 @@ if (isset($_GET['update_cart_display'])) {
     
     echo json_encode($response);
     exit;
-}
-
-if (isset($_SESSION['added_products'])) {
-    unset($_SESSION['added_products']);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_cart'])) {
@@ -575,7 +570,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
                             </div>
                             <div class="cart-item-quantity">
                                 <label for="quantity_<?php echo $product_id; ?>">Quantité :</label>
-                             <input type="number" id="quantity_<?php echo $product_id; ?>" name="quantity[<?php echo $product_id; ?>]" value="<?php echo htmlspecialchars($item['quantity']); ?>" min="0">
+                                <input type="number" id="quantity_<?php echo $product_id; ?>" name="quantity[<?php echo $product_id; ?>]" value="<?php echo htmlspecialchars($item['quantity']); ?>" min="0">
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -674,10 +669,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
                 dataType: 'json',
                 success: function(response) {
                     $('#cart-content').html(response.cart_html);
-                    
-                    if (response.notification && response.notification_type) {
-                        toastr[response.notification_type](response.notification);
-                    }
                 },
                 error: function(xhr, status, error) {
                     console.error("AJAX error:", error);
@@ -685,24 +676,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
                 }
             });
         }
-
-        function checkJsonAndAddToCart() {
-            $.ajax({
-                url: 'index.php',
-                type: 'POST',
-                data: {action: 'update_cart'},
-                success: function() {
-                    updateCartDisplay();
-                },
-                error: function(xhr, status, error) {
-                    console.error("AJAX error:", error);
-                    toastr.error('Erreur lors de la mise à jour du panier');
-                }
-            });
-        }
-
-        checkJsonAndAddToCart();
-        setInterval(checkJsonAndAddToCart, 2000);
 
         $(document).on('click', '.add-to-cart-btn', function() {
             var productId = $(this).data('product-id');
@@ -710,8 +683,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
                 product_id: productId,
                 action: 'add',
                 quantity: 1
-            }, function() {
+            }, function(response) {
+                if (response && response.status === 'success') {
+                    toastr.success(response.message);
+                } else {
+                    toastr.error('Erreur lors de l\'ajout au panier');
+                }
                 updateCartDisplay();
+            }, 'json')
+            .fail(function(xhr, status, error) {
+                console.error("AJAX error:", error);
+                toastr.error('Erreur lors de l\'ajout au panier');
             });
         });
     });
@@ -720,4 +702,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payer'])) {
 </html>
 <?php
 $conn->close();
-?>
+?>)
