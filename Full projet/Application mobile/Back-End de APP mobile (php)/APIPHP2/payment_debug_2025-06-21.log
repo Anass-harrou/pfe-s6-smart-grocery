@@ -1,0 +1,50 @@
+2025-06-21 00:54:13 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_6855e694255c6","amount":10}
+
+2025-06-21 00:54:13 - Processing payment for user ID: 11, Amount: 10, Transaction: qr_pay_6855e694255c6
+2025-06-21 00:54:13 - ERROR: Cannot add or update a child row: a foreign key constraint fails (`gestion_stock`.`achat_produits`, CONSTRAINT `achat_produits_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produits` (`id`))
+2025-06-21 01:02:48 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_6855e89554360","amount":10}
+
+2025-06-21 01:02:48 - Processing payment for user ID: 11, Amount: 10, Transaction: qr_pay_6855e89554360
+2025-06-21 01:02:48 - ERROR: Cannot add or update a child row: a foreign key constraint fails (`gestion_stock`.`achat_produits`, CONSTRAINT `achat_produits_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produits` (`id`))
+2025-06-21 01:04:08 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_6855e8e65b1e3","amount":10}
+
+2025-06-21 01:04:08 - Processing payment for user ID: 11, Amount: 10, Transaction: qr_pay_6855e8e65b1e3
+2025-06-21 01:04:08 - Used database function, created purchase ID: 48
+2025-06-21 01:04:08 - Payment successful: User ID 11, Amount 10, New balance 2490.00
+2025-06-21 01:09:11 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_6855ea146e117","amount":8}
+
+2025-06-21 01:09:11 - Processing payment for user ID: 11, Amount: 8, Transaction: qr_pay_6855ea146e117
+2025-06-21 01:09:11 - Using QR Payment product ID: 12
+2025-06-21 01:09:11 - Payment successful: User ID 11, Amount 8, New balance 2482
+2025-06-21 01:15:37 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_6855eb96af40f","amount":10}
+
+2025-06-21 01:15:37 - Processing payment for user ID: 11, Amount: 10, Transaction: qr_pay_6855eb96af40f
+2025-06-21 01:15:37 - Payment successful: User ID 11, Amount 10, New balance 2472
+2025-06-21 12:43:34 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_68568cd44ee3e","amount":6}
+
+2025-06-21 12:43:34 - Processing payment for user ID: 11, Amount: 6, Transaction: qr_pay_68568cd44ee3e
+2025-06-21 12:43:34 - Payment successful: User ID 11, Amount 6, New balance 2466
+2025-06-21 15:07:54 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_6856aea8d8a24","amount":12}
+
+2025-06-21 15:07:54 - Processing payment for user ID: 11, Amount: 12, Transaction: qr_pay_6856aea8d8a24
+2025-06-21 15:07:54 - Payment successful: User ID 11, Amount 12, New balance 2454
+2025-06-21 15:09:33 - REQUEST: POST
+POST: []
+RAW: {"user_id":"11","transaction_id":"qr_pay_6856af0b009ee","amount":10}
+
+2025-06-21 15:09:33 - Processing payment for user ID: 11, Amount: 10, Transaction: qr_pay_6856af0b009ee
+2025-06-21 15:09:33 - Payment successful: User ID 11, Amount 10, New balance 2444

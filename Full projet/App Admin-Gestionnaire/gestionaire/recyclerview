@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+.product-list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid #ccc;
+  padding: 10px;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.card-item {
+  flex: 0 0 auto;
+  min-width: 120px;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #eee;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+
+    <div id="recyclerView" class="product-list"></div>
+<button id="loadMoreBtn">Load More</button>
+
+<script>
+    const recyclerView = document.getElementById('recyclerView');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+let currentIndex = 0;
+const pageSize = 20;
+
+// Mock data
+const data = Array.from({ length: 1000 }, (_, i) => `Item ${i + 1}`);
+
+function loadItems() {
+  const fragment = document.createDocumentFragment();
+  const end = Math.min(currentIndex + pageSize, data.length);
+  
+  for (let i = currentIndex; i < end; i++) {
+    const item = document.createElement('div');
+    item.className = 'card-item';
+    item.textContent = data[i];
+    fragment.appendChild(item);
+  }
+
+  recyclerView.appendChild(fragment);
+  currentIndex = end;
+
+  if (currentIndex >= data.length) {
+    loadMoreBtn.style.display = 'none';
+  }
+}
+
+loadMoreBtn.addEventListener('click', loadItems);
+
+// Initial load
+loadItems();
+
+</script>
+</body>
+</html>

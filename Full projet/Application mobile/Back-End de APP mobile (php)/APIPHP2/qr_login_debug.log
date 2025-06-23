@@ -1,0 +1,481 @@
+2025-06-17 23:26:08 - POST: []
+RAW: {"qr_login_token":"8d6f53a294ab1a64f9356af2763e1c3e","user_id":"102"}
+
+2025-06-17 23:26:57 - POST: []
+RAW: {"qr_login_token":"8d6f53a294ab1a64f9356af2763e1c3e","user_id":"102"}
+
+2025-06-17 23:29:22 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"8d6f53a294ab1a64f9356af2763e1c3e","user_id":"102"}
+
+2025-06-17 23:29:22 - Processing token: 8d6f53a294ab1a64f9356af2763e1c3e, user_id: 102
+2025-06-17 23:29:52 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"27c357bfb5cec6234d47cf2853de79b8","user_id":"102"}
+
+2025-06-17 23:29:52 - Processing token: 27c357bfb5cec6234d47cf2853de79b8, user_id: 102
+2025-06-17 23:30:41 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"2ca2cc8f94757e10037df1a34b477d68","user_id":"102"}
+
+2025-06-17 23:30:41 - Processing token: 2ca2cc8f94757e10037df1a34b477d68, user_id: 102
+2025-06-17 23:33:21 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cb8ad5058dec7b4bf0e2667a7ca42528","user_id":"102"}
+
+2025-06-17 23:33:21 - Processing token: cb8ad5058dec7b4bf0e2667a7ca42528, user_id: 102
+2025-06-17 23:43:56 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"ee4f48f98407b88f4598037d32125d4e","user_id":"102"}
+
+2025-06-17 23:43:56 - Processing token: ee4f48f98407b88f4598037d32125d4e, user_id: 102
+2025-06-18 03:45:12 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"e2b0d46c45fefa765ee2cc2dc0f4995a","user_id":"102"}
+
+2025-06-18 03:45:12 - Processing token: e2b0d46c45fefa765ee2cc2dc0f4995a, user_id: 102
+2025-06-18 17:17:53 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"adb60daca432e8a546e0bfd256c3896d","user_id":"102"}
+
+2025-06-18 17:17:53 - Processing token: adb60daca432e8a546e0bfd256c3896d, user_id: 102
+2025-06-19 17:50:25 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"null"}
+
+2025-06-19 17:50:25 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: null
+2025-06-19 17:50:47 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"null"}
+
+2025-06-19 17:50:47 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: null
+2025-06-19 17:56:59 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"null"}
+
+2025-06-19 17:56:59 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: null
+2025-06-19 17:57:13 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"null"}
+
+2025-06-19 17:57:13 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: null
+2025-06-19 18:05:29 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"null"}
+Current User: Anass-harrou, Timestamp: 2025-06-19 16:03:59
+
+2025-06-19 18:05:29 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: null
+2025-06-19 18:07:30 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"null"}
+Current User: Anass-harroumobile, Timestamp: 2025-06-19 16:05:49
+
+2025-06-19 18:07:30 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: null (Type: string)
+2025-06-19 19:34:56 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"12","timestamp":"2025-06-19 16:32:23","app_user":"Anass-harrou"}
+Current User: Anass-harroumobile, Timestamp: 2025-06-19 16:05:49
+
+2025-06-19 19:34:56 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: 12 (Type: string)
+2025-06-19 19:34:57 - REQUEST: POST
+POST: {"user_id":"12","app_user":"Anass-harrou","qr_login_token":"cdbf176394169ecd422ef5929c232cc2","timestamp":"2025-06-19 16:32:23"}
+RAW: user_id=12&app_user=Anass-harrou&qr_login_token=cdbf176394169ecd422ef5929c232cc2&timestamp=2025-06-19+16%3A32%3A23&
+Current User: Anass-harroumobile, Timestamp: 2025-06-19 16:05:49
+
+2025-06-19 19:34:57 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: 12 (Type: string)
+2025-06-19 17:31:54 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"12","timestamp":"2025-06-19 16:32:23","app_user":"Anass-harrou"}
+Current User: Anass-harrou, Timestamp: 2025-06-19 17:31:54
+
+2025-06-19 17:31:54 - Parsed input JSON: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"12","timestamp":"2025-06-19 16:32:23","app_user":"Anass-harrou"}
+2025-06-19 17:31:54 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: 12 (Type: string)
+2025-06-19 17:31:54 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma"}
+2025-06-19 17:31:54 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:31:54 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"12","timestamp":"2025-06-19 16:32:23","app_user":"Anass-harrou"}
+Current User: Anass-harrou, Timestamp: 2025-06-19 17:31:54
+
+2025-06-19 17:31:54 - Parsed input JSON: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"12","timestamp":"2025-06-19 16:32:23","app_user":"Anass-harrou"}
+2025-06-19 17:31:54 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: 12 (Type: string)
+2025-06-19 17:31:54 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma"}
+2025-06-19 17:31:54 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:31:54 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"12","timestamp":"2025-06-19 16:32:23","app_user":"Anass-harrou"}
+Current User: Anass-harrou, Timestamp: 2025-06-19 17:31:54
+
+2025-06-19 17:31:54 - Parsed input JSON: {"qr_login_token":"cdbf176394169ecd422ef5929c232cc2","user_id":"12","timestamp":"2025-06-19 16:32:23","app_user":"Anass-harrou"}
+2025-06-19 17:31:54 - Processing token: cdbf176394169ecd422ef5929c232cc2, user_id: 12 (Type: string)
+2025-06-19 17:31:54 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma"}
+2025-06-19 17:31:54 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: []
+RAW: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: {"qr_login_token":"40e25c1c1cd4277e375ee7862bf9f102","user_id":"12","app_user":"Anass-harrou","timestamp":"2025-06-19 17:40:38"}
+2025-06-19 17:35:39 - Processing token: 40e25c1c1cd4277e375ee7862bf9f102, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","authentication_token":"2ca4d230f2d579b9e9b79b123bd1bc5a","token_expiry":"2025-07-20 17:29:56","last_login":"2025-06-20 16:29:56"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"11","qr_code":"{\"type\":\"login\",\"qr_login_token\":\"8e28dc7471024c971df9dcdb6a8a0235\"}"}
+RAW: user_id=11&qr_code=%7B%22type%22%3A%22login%22%2C%22qr_login_token%22%3A%228e28dc7471024c971df9dcdb6a8a0235%22%7D&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - ERROR: Missing token parameter
+2025-06-19 17:35:39 - REQUEST: POST
+POST: {"user_id":"12","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=12&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+Current User: Anass-harrouunkowne, Timestamp: 2025-06-19 17:35:39
+
+2025-06-19 17:35:39 - Parsed input JSON: null
+2025-06-19 17:35:39 - Processing token: 8e28dc7471024c971df9dcdb6a8a0235, user_id: 12 (Type: string)
+2025-06-19 17:35:39 - Found user by numeric ID: {"id":12,"name":"nada","email":"nada@ghmari.ma","address":"fnideq","solde":"2000.00","num_commande":"CMD61241","password":"$2y$10$lyeCVFUQGW4FwsgVFtiURuxqnKjGE23AL2LBOte831kKPqepHYP56","phone":"0644496823","bio":"","last_login":"2025-06-20 23:51:44"}
+2025-06-19 17:35:39 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-20 23:59:22 - REQUEST: POST
+POST: {"user_id":"12","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=12&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+
+2025-06-20 23:59:22 - Parsed input JSON: null
+2025-06-20 23:59:22 - SUCCESS: QR login processed for user nada (ID: 12)
+2025-06-21 00:02:33 - REQUEST: POST
+POST: {"user_id":"12","qr_login_token":"5c0f43c6961f7c89aa4e7bc84d027866"}
+RAW: user_id=12&qr_login_token=5c0f43c6961f7c89aa4e7bc84d027866&
+
+2025-06-21 00:02:33 - Parsed input JSON: null
+2025-06-21 00:02:33 - SUCCESS: QR login processed for user nada (ID: 12)
+2025-06-21 00:02:54 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"03040d4417afbe05e799d4b851574cf2"}
+RAW: user_id=11&qr_login_token=03040d4417afbe05e799d4b851574cf2&
+
+2025-06-21 00:02:54 - Parsed input JSON: null
+2025-06-21 00:02:54 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-21 00:04:28 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"0cf3089a7916ad45c99fa6a57863fdb2"}
+RAW: user_id=11&qr_login_token=0cf3089a7916ad45c99fa6a57863fdb2&
+
+2025-06-21 00:04:28 - Parsed input JSON: null
+2025-06-21 00:04:28 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-21 03:24:12 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"b5f86c4e64bd346fa572232a4aed2014"}
+RAW: user_id=11&qr_login_token=b5f86c4e64bd346fa572232a4aed2014&
+
+2025-06-21 03:24:12 - Parsed input JSON: null
+2025-06-21 03:24:12 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-21 12:32:58 - REQUEST: POST
+POST: {"user_id":"12","qr_login_token":"bcba7561bece68d4d76fae20c6f87779"}
+RAW: user_id=12&qr_login_token=bcba7561bece68d4d76fae20c6f87779&
+
+2025-06-21 12:32:58 - Parsed input JSON: null
+2025-06-21 12:32:58 - SUCCESS: QR login processed for user nada (ID: 12)
+2025-06-21 12:34:25 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"59f105efba08b1cb43ed0a7180e563c9"}
+RAW: user_id=11&qr_login_token=59f105efba08b1cb43ed0a7180e563c9&
+
+2025-06-21 12:34:25 - Parsed input JSON: null
+2025-06-21 12:34:25 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-21 12:40:56 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"879614e739b4e79a43236d315805a226"}
+RAW: user_id=11&qr_login_token=879614e739b4e79a43236d315805a226&
+
+2025-06-21 12:40:56 - Parsed input JSON: null
+2025-06-21 12:40:56 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-21 14:06:36 - REQUEST: POST
+POST: {"user_id":"12","qr_login_token":"02b3ee8e2d105778d7b4d33cd6a382a1"}
+RAW: user_id=12&qr_login_token=02b3ee8e2d105778d7b4d33cd6a382a1&
+
+2025-06-21 14:06:36 - Parsed input JSON: null
+2025-06-21 14:06:36 - SUCCESS: QR login processed for user nada (ID: 12)
+2025-06-21 14:07:06 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"500e2616e6deccb15826fd8147fa7b5b"}
+RAW: user_id=11&qr_login_token=500e2616e6deccb15826fd8147fa7b5b&
+
+2025-06-21 14:07:06 - Parsed input JSON: null
+2025-06-21 14:07:06 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-21 15:06:10 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"14c73ba0ed6471360b04caf3d9bdafe6"}
+RAW: user_id=11&qr_login_token=14c73ba0ed6471360b04caf3d9bdafe6&
+
+2025-06-21 15:06:10 - Parsed input JSON: null
+2025-06-21 15:06:10 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-22 22:23:25 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"5f2adee349c36173d6f6efb46d5eceb9"}
+RAW: user_id=11&qr_login_token=5f2adee349c36173d6f6efb46d5eceb9&
+
+2025-06-22 22:23:25 - Parsed input JSON: null
+2025-06-22 22:23:25 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-22 22:24:13 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"cb97e7f5f7a278d2d0e38315d0842d09"}
+RAW: user_id=11&qr_login_token=cb97e7f5f7a278d2d0e38315d0842d09&
+
+2025-06-22 22:24:13 - Parsed input JSON: null
+2025-06-22 22:24:13 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-23 05:02:27 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"ec0e3d90fe05c28c1c5b5fb89b4546fe"}
+RAW: user_id=11&qr_login_token=ec0e3d90fe05c28c1c5b5fb89b4546fe&
+
+2025-06-23 05:02:27 - Parsed input JSON: null
+2025-06-23 05:02:27 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-23 05:02:38 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"8b7dc82ea188b74514d846d9c6b340b1"}
+RAW: user_id=11&qr_login_token=8b7dc82ea188b74514d846d9c6b340b1&
+
+2025-06-23 05:02:38 - Parsed input JSON: null
+2025-06-23 05:02:38 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-23 05:02:50 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"002c331f674b45cf4b48650279d53eab"}
+RAW: user_id=11&qr_login_token=002c331f674b45cf4b48650279d53eab&
+
+2025-06-23 05:02:50 - Parsed input JSON: null
+2025-06-23 05:02:50 - SUCCESS: QR login processed for user Fatima (ID: 11)
+2025-06-23 05:03:00 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"bfacb12cc7f3e7c8d2003e5c0d5dbc99"}
+RAW: user_id=11&qr_login_token=bfacb12cc7f3e7c8d2003e5c0d5dbc99&
+
+2025-06-23 05:03:00 - Parsed input JSON: null
+2025-06-23 05:03:00 - SUCCESS: QR login processed for user Fatima (ID: 11)

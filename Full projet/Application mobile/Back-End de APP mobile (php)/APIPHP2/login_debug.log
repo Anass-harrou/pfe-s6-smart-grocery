@@ -1,0 +1,43 @@
+2025-06-19 17:00:03 - New login attempt by app user: Anass-harrouAndroid
+INPUT: {"email":"nada@ghmari.ma","password":"nada2003","timestamp":"2025-06-19 17:00:03","app_user":"Anass-harrouAndroid"}
+
+2025-06-19 17:00:03 - Login attempt for email: nada@ghmari.ma
+2025-06-19 17:00:03 - New login attempt by app user: Anass-harrouAndroid
+INPUT: {"email":"nada@ghmari.ma","password":"nada2003","timestamp":"2025-06-19 17:00:03","app_user":"Anass-harrouAndroid"}
+
+2025-06-19 17:00:03 - Login attempt for email: nada@ghmari.ma
+2025-06-19 17:00:03 - New login attempt by app user: Anass-harrouAndroid
+INPUT: {"email":"nada@ghmari.ma","password":"nada2003","timestamp":"2025-06-19 17:00:03","app_user":"Anass-harrouAndroid"}
+
+2025-06-19 17:00:03 - Login attempt for email: nada@ghmari.ma
+2025-06-19 17:13:40 - New login attempt by app user: Anass-harrou
+INPUT: {"email":"nada@ghmari.ma","password":"nada2003","timestamp":"2025-06-19 17:13:40","app_user":"Anass-harrou"}
+
+2025-06-19 17:13:40 - Login attempt for email: nada@ghmari.ma
+2025-06-19 17:23:15 - New login attempt by app user: Anass-harrou
+INPUT: 
+
+2025-06-19 17:23:15 - Login failed: Missing parameters\n2025-06-19 17:25:23 - New login attempt by app user: Anass-harroulogin
+INPUT: {"email":"nada@ghmari.ma","password":"nada2003","timestamp":"2025-06-19 17:13:40","app_user":"Anass-harrou"}
+
+2025-06-19 17:25:23 - Login attempt for email: nada@ghmari.ma
+2025-06-19 17:28:15 - New login attempt by app user: Anass-harrou
+INPUT: {"email":"nada@ghmari.ma","password":"nada2003","timestamp":"2025-06-19 17:13:40","app_user":"Anass-harrou"}
+
+2025-06-19 17:28:15 - Login attempt for email: nada@ghmari.ma
+2025-06-19 17:28:15 - Added authentication columns to client table
+2025-06-19 17:28:15 - Login successful for: nada (ID: 12)
+2025-06-20 17:29:55 - Raw input: {"email":"nada@ghmari.ma","password":"nada2003"}
+2025-06-20 17:29:55 - Decoded data: Array
+(
+    [email] => nada@ghmari.ma
+    [password] => nada2003
+)
+
+2025-06-20 17:31:19 - Raw input: 
+2025-06-20 17:31:19 - Using POST data instead
+2025-06-20 17:31:19 - Decoded data: Array
+(
+)
+
+2025-06-20 17:31:19 - Missing parameters: email, password

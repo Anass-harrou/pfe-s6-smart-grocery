@@ -1,0 +1,43 @@
+{
+    "scans": [
+        {
+            "uid": "RFID Ready",
+            "timestamp": "2025-06-21 14:03:23",
+            "user_id": "unknown",
+            "name": "unknown",
+            "email": "",
+            "balance": 0.0
+        },
+        {
+            "uid": "63B0B4A7",
+            "timestamp": "2025-06-21 14:03:28",
+            "user_id": 11,
+            "name": "Fatima",
+            "email": "Fatima@tms.com",
+            "balance": 2444.0
+        },
+        {
+            "uid": "RFID Ready",
+            "timestamp": "2025-06-21 15:29:33",
+            "user_id": "unknown",
+            "name": "unknown",
+            "balance": 0.0
+        },
+        {
+            "uid": "63B0B4A7",
+            "timestamp": "2025-06-21 15:29:39",
+            "user_id": 11,
+            "name": "Fatima",
+            "balance": 2444.0
+        },
+        {
+            "uid": "D7D8EBD5",
+            "timestamp": "2025-06-21 15:33:52",
+            "user_id": 12,
+            "name": "nada",
+            "balance": 2000.0
+        }
+    ],
+    "last_updated": "2025-06-21 15:33:52",
+    "created_by": "Anass-harrou"
+}

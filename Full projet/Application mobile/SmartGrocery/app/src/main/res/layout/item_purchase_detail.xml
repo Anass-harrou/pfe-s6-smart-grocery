@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        tools:text="Abtal" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#555555"
+        android:textSize="14sp"
+        android:layout_marginStart="8dp"
+        tools:text="2.00 MAD" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:textColor="#555555"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginStart="8dp"
+        tools:text="×4" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="end"
+        android:layout_marginStart="8dp"
+        tools:text="8.00 MAD" />
+</LinearLayout>

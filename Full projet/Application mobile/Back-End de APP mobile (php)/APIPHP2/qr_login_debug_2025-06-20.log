@@ -1,0 +1,52 @@
+2025-06-20 23:46:53 - REQUEST: GET
+POST: []
+RAW: 
+
+2025-06-20 23:46:53 - ERROR: Missing token parameter
+2025-06-20 23:47:02 - REQUEST: GET
+POST: []
+RAW: 
+
+2025-06-20 23:47:02 - ERROR: Missing token parameter
+2025-06-20 23:47:42 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=11&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+
+2025-06-20 23:47:42 - Found token in POST: 8e28dc7471024c971df9dcdb6a8a0235
+2025-06-20 23:47:42 - Found user_id in POST: 11
+2025-06-20 23:47:42 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-20 23:47:45 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=11&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+
+2025-06-20 23:47:45 - Found token in POST: 8e28dc7471024c971df9dcdb6a8a0235
+2025-06-20 23:47:45 - Found user_id in POST: 11
+2025-06-20 23:47:45 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-20 23:47:48 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=11&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+
+2025-06-20 23:47:48 - Found token in POST: 8e28dc7471024c971df9dcdb6a8a0235
+2025-06-20 23:47:48 - Found user_id in POST: 11
+2025-06-20 23:47:48 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-20 23:50:28 - REQUEST: POST
+POST: {"user_id":"11","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=11&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+
+2025-06-20 23:50:28 - Found token in POST: 8e28dc7471024c971df9dcdb6a8a0235
+2025-06-20 23:50:28 - Found user_id in POST: 11
+2025-06-20 23:50:28 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-20 23:51:52 - REQUEST: POST
+POST: {"user_id":"12","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=12&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+
+2025-06-20 23:51:52 - Found token in POST: 8e28dc7471024c971df9dcdb6a8a0235
+2025-06-20 23:51:52 - Found user_id in POST: 12
+2025-06-20 23:51:52 - ERROR: Unknown column 'user_id' in 'field list'
+2025-06-20 23:51:55 - REQUEST: POST
+POST: {"user_id":"12","qr_login_token":"8e28dc7471024c971df9dcdb6a8a0235"}
+RAW: user_id=12&qr_login_token=8e28dc7471024c971df9dcdb6a8a0235&
+
+2025-06-20 23:51:55 - Found token in POST: 8e28dc7471024c971df9dcdb6a8a0235
+2025-06-20 23:51:55 - Found user_id in POST: 12
+2025-06-20 23:51:55 - ERROR: Unknown column 'user_id' in 'field list'
