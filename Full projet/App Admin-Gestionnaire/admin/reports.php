@@ -291,7 +291,7 @@ mysqli_close($link);
         }
         
         .sidebar {
-            background: linear-gradient(180deg, var(--primary-color) 0%, #224abe 100%);
+            background: rgb(86, 117, 148);
             min-height: 100vh;
             color: white;
             position: fixed;
@@ -542,12 +542,12 @@ mysqli_close($link);
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="dashboard.php">
+                <a class="nav-link" href="dashboard.php">
                     <i class="fas fa-tachometer-alt"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="create.php">
                     <i class="fas fa-users"></i> Clients
                 </a>
             </li>

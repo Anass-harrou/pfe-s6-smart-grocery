@@ -126,7 +126,7 @@ if($result_active = mysqli_query($link, $sql_active)){
         }
         
         .sidebar {
-            background: linear-gradient(180deg, var(--primary-color) 0%, #224abe 100%);
+            background: rgb(86, 117, 148);
             min-height: 100vh;
             color: white;
             position: fixed;

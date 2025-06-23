@@ -270,7 +270,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         
         .sidebar {
-            background: linear-gradient(180deg, var(--primary-color) 0%, #224abe 100%);
+            background: rgb(86, 117, 148);
             min-height: 100vh;
             color: white;
             position: fixed;

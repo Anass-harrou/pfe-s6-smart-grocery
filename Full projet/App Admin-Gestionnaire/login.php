@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         .login-image {
             flex: 1;
-            background-color: var(--primary-color);
+            background-color:rgb(86, 117, 148);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         .form-control:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(98, 0, 238, 0.25);
+            box-shadow: 0 0 0 0.25rem #e3f2fd;;
         }
         
         .form-floating>label {
@@ -211,12 +211,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         
         .login-logo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             margin-bottom: 20px;
-            background-color: white;
+          
             padding: 15px;
-            border-radius: 50%;
+         
         }
         
         .alert {
@@ -254,9 +254,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="login-content">
                         <div class="login-image">
                             <div class="login-logo">
-                                <img src="smart_cart_transparent.png" alt="Smart Grocery Logo" class="img-fluid" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><text x=%2250%%22 y=%2250%%22 font-size=%2230%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22%236200EE%22>SG</text></svg>'">
+                                <img src="../App Admin-Gestionnaire/gestionaire/images/guide/logo.png" alt="Smart Grocery Logo" class="img-fluid" >
                             </div>
-                            <h2 class="mb-4">Smart Grocery Admin</h2>
+                            <h2 class="mb-4">Smart Grocery</h2>
                             <p class="mb-5">Plateforme d'administration et de gestion des stocks du système Smart Grocery</p>
                             
                             <div class="features">
@@ -287,7 +287,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                         
                         <div class="login-form">
-                            <h3 class="mb-4 text-center">Connexion Administration</h3>
+                            <h3 class="mb-4 text-center">Connexion </h3>
                             
                             <?php if (isset($error)): ?>
                                 <div class="alert alert-danger mb-4">
@@ -319,16 +319,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </form>
                             
-                            <div class="text-center mt-4">
-                                <a href="tablet/index.php" class="tablet-link">
-                                    <i class="fas fa-tablet-alt me-2"></i> Accéder à l'interface tablette
-                                </a>
-                            </div>
+                           
                             
                             <hr class="my-4">
                             
                             <div class="text-center text-muted small">
-                                <p class="mb-0">Administration Smart Grocery &copy; 2025</p>
+                                <p class="mb-0">Smart Grocery &copy; 2025</p>
                                 <p>Accès réservé au personnel autorisé</p>
                             </div>
                         </div>

@@ -97,7 +97,7 @@ $heureMinute = date('H:i');
 
         /* Sidebar Styles */
         .sidebar {
-            background-color: var(--sidebar-bg);
+            background-color: rgb(86, 117, 148);
             color: var(--white);
             padding: 1.25rem 1rem;
             width: 280px;

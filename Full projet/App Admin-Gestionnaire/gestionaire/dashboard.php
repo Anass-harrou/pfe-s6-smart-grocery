@@ -157,7 +157,7 @@ try {
         }
         
         .sidebar {
-            background: linear-gradient(180deg, #4e73df 0%, #224abe 100%);
+            background: rgb(86, 117, 148);
             color: white;
             width: 250px;
             position: fixed;
